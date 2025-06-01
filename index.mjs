@@ -31,6 +31,7 @@ rl.question('Enter TikTok username: ', (inputUsername) => {
     // And here we receive gifts sent to the streamer
     connection.on(WebcastEvent.GIFT, data => {
         console.log(`${data.user.uniqueId} (userId:${data.user.userId}) sends ${data.giftId}`);
+        say.speak(`${data.user.uniqueId} sends a gift!`); // Use say to read the gift aloud
     });
 
     // ...and more events described in the documentation below
